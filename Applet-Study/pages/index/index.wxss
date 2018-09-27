@@ -14,14 +14,26 @@
   width: 33.33%;
   height: 200rpx;
   font-size: 14px;
-  border: 1px solid #ccc;
   box-sizing: border-box; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid #ccc;
+  position: relative;
 }
-
+.index-nav .nav-item::after{
+  content: "";
+  width: 1rpx;
+  height: 100%;
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.index-nav .nav-item:nth-child(3n)::after{
+  width: 0;
+}
 .nav-item image{
   width: 80rpx;
   height: 80rpx;
