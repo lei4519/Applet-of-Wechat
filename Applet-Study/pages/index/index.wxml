@@ -1,13 +1,42 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class='slider'>
+  <image src='/assets/images/banner-01.png'></image>
+</view>
+
+<view class='index-nav'>
+  <navigator class='nav-item'>
+    <image src='/assets/icons/grid-01.png'></image>
+    <text>美食</text>
+  </navigator>
+  <navigator class='nav-item'>
+    <image src='/assets/icons/grid-02.png'></image>
+    <text>美食</text>
+  </navigator>
+  <navigator class='nav-item'>
+    <image src='/assets/icons/grid-03.png'></image>
+    <text>美食</text>
+  </navigator>
+  <navigator class='nav-item'>
+    <image src='/assets/icons/grid-04.png'></image>
+    <text>美食</text>
+  </navigator>
+  <navigator class='nav-item'>
+    <image src='/assets/icons/grid-05.png'></image>
+    <text>美食</text>
+  </navigator>
+  <navigator class='nav-item'>
+    <image src='/assets/icons/grid-06.png'></image>
+    <text>美食</text>
+  </navigator>
+  <navigator class='nav-item'>
+    <image src='/assets/icons/grid-07.png'></image>
+    <text>美食</text>
+  </navigator>
+  <navigator class='nav-item'>
+    <image src='/assets/icons/grid-08.png'></image>
+    <text>美食</text>
+  </navigator>
+  <navigator class='nav-item'>
+    <image src='/assets/icons/grid-09.png'></image>
+    <text>美食</text>
+  </navigator>
 </view>
