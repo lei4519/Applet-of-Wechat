@@ -1,10 +1,20 @@
 /**app.wxss**/
-.container {
+/* 细线边框 */
+.bdr{
+  position: relative;
+}
+.bdr::after{
+  content: "";
+  width: 1rpx;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* 间隔 */
+.divider{
+  height: 20rpx;
+  background-color: #f1f1f1;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1) inset;
+}
