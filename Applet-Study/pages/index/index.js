@@ -1,50 +1,46 @@
 // pages/message/message.js
+let app = getApp()
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    swiperList: []
+    swiperList: [],
+    categoryList: []
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    
-    
+  onLoad: function () {
+    Promise.all([app.promiseRequest({
+      url: 'https://locally.uieee.com/slides'
+    }), app.promiseRequest({
+      url: 'https://locally.uieee.com/categories'
+    })])
+      .then(result => {
+        let [{ data: swiperList }, { data: categoryList }] = result
+        this.setData({
+          swiperList,
+          categoryList
+        })
+      })
+      .catch(err => {
+        console.log('index.js Promise.all() => ' + err)
+      })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    function promiseRequest(options) {
-      return new Promise((resolve, reject) => {
-        wx.request({
-          url: options.url,
-          method: options.method,
-          dataType: options.dataType,
-          success(res) {
-            resolve(res)
-          }
-        })
-      })
-    }
-    promiseRequest({
-      url: 'https://locally.uieee.com/slides',
-      method: 'get',
-      dataType: 'json'
-    })
-      .then(res => {
-        this.swiperList = res.data
-      })
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
   },
 
   /**

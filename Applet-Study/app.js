@@ -1,4 +1,22 @@
 App({
+  promiseRequest(options) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: options.url || '',
+        data: options.data || '',
+        header: options.header || {},
+        method: options.method || 'GET',
+        dataType: options.dataType || 'json',
+        responseType: options.responseType || 'text',
+        success (res) {
+          resolve(res)
+        },
+        fail (err) {
+          reject(err)
+        },
+      })
+    })
+  },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
@@ -26,3 +44,4 @@ App({
     
   }
 })
+

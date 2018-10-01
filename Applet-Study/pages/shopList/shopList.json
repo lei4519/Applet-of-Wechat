@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "美食"
+  "navigationBarTitleText": "美食",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 100,
+  "backgroundTextStyle": "dark"
 }
