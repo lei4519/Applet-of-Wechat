@@ -1,1 +1,10 @@
-/* pages/profile/profile.wxss */
+.avatar{
+  height: 400rpx;
+  background-color: #f60;
+}
+.avatar image{
+  width: 200rpx;
+  height: 200rpx;
+  border: 10rpx solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}

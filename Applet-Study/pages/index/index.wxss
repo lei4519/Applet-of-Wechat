@@ -6,6 +6,7 @@
 }
 
 .index-nav{
+  background-color: #fff;
   display: flex;
   flex-wrap: wrap;
 }

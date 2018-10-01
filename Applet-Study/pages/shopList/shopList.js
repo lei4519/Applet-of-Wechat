@@ -1,50 +1,32 @@
-// pages/message/message.js
+// pages/shopList/shopList.js
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    swiperList: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-    
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    function promiseRequest(options) {
-      return new Promise((resolve, reject) => {
-        wx.request({
-          url: options.url,
-          method: options.method,
-          dataType: options.dataType,
-          success(res) {
-            resolve(res)
-          }
-        })
-      })
-    }
-    promiseRequest({
-      url: 'https://locally.uieee.com/slides',
-      method: 'get',
-      dataType: 'json'
-    })
-      .then(res => {
-        this.swiperList = res.data
-      })
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
   },
 
   /**
@@ -82,4 +64,3 @@ Page({
 
   }
 })
-

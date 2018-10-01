@@ -1,2 +1,25 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class='avatar center'>
+  <image src='/assets/images/avatar.png'></image>
+</view>
+
+<view class='divider'></view>
+
+<view class='profile'>
+  <navigator class='item arrow'><text>个人资料</text></navigator>
+  <navigator class='item arrow'><text>我得优惠券</text></navigator>
+</view>
+
+<view class='divider'></view>
+
+<view>
+  <navigator class='item arrow'><text>常见问题</text></navigator>
+  <navigator class='item arrow'><text>使用条款</text></navigator>
+  <navigator class='item arrow'><text>常见问题</text></navigator>
+  <navigator class='item arrow'><text>使用条款</text></navigator>
+</view>
+
+<view class='divider'></view>
+
+<view class='set'>
+  <navigator class='item arrow'><text>设置</text></navigator>
+</view>

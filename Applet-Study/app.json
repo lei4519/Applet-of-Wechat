@@ -1,18 +1,20 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/message/message",
     "pages/profile/profile",
-    "pages/contact/contact"
+    "pages/contact/contact",
+    "pages/shopList/shopList"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f60",
     "navigationBarTitleText": "MyMiniPro",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle": "#fff"
   },
   "tabBar": {
+    "color": "#999",
+    "selectedColor": "#999",
     "list": [
       {
         "pagePath": "pages/index/index",

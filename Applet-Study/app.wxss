@@ -1,4 +1,7 @@
 /**app.wxss**/
+page{
+  background-color: #f1f1f1;
+}
 /* 细线边框 */
 .bdr{
   position: relative;
@@ -16,5 +19,32 @@
 .divider{
   height: 20rpx;
   background-color: #f1f1f1;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+/* 箭头 */
+.arrow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow::after{
+  content: '';
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 1rpx solid #ccc;
+  border-right: 1rpx solid #ccc;
+  transform: rotate(45deg);
+}
+/* 水平垂直居中 */
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 列表 */
+.item{
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
 }
