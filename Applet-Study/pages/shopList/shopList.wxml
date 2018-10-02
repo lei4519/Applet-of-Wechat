@@ -1,13 +1,16 @@
 <view class="shop" wx:for="{{  shopsInfo }}" wx:key="{{ item.id }}">
   <image class="shop-img" src="{{ item.images[0] }}"></image>
   <view class="shop-info">
-    <text class="shop-title">{{ item.name }}</text>
+    <text class="shop-title ell">{{ item.name }}</text>
     <text class="shop-tell">{{ item.phone }}</text>
     <text class="shop-address">{{ item.address }}</text>
     <text class="shop-time">{{ item.businessHours }}</text>
   </view>
   <view class="shop-star">
     <view class="star-after">★★★★★</view>
-    <view class="star-before" style="width: {{ item.score + '%' }}">★★★★★</view>
+    <view class="star-before" style="width: {{ item.score }}%">★★★★★</view>
   </view>
 </view>
+
+<!-- <view wx:if="{{ moreFlag }}" class="loadmore loading">正在加载...</view>
+<view wx:else class="loadmore">下面没有东西了~</view> -->

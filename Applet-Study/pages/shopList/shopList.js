@@ -9,38 +9,39 @@ Page({
   data: {
     id: 1,
     page: 0,
-    limit: 10,
-    shopsInfo: []
+    limit: 20,
+    shopsInfo: [],
+    moreFlag: true
   },
   getShopsInfo() {
+    wx.showNavigationBarLoading()
+    wx.showLoading({
+      title: 'loading...'
+    })
     this.setData({ page: this.data.page + 1 })
     app.promiseRequest({
       url: `https://locally.uieee.com/categories/${this.data.id}/shops?_page=${this.data.page}&_limit=${this.data.limit}`
     }).then(res => {
-      this.setData({ shopsInfo: this.data.shopsInfo.concat(res.data) })
+      wx.hideNavigationBarLoading()
+      wx.hideLoading()
+      if (res.data && res.data.length){
+        this.setData({ shopsInfo: this.data.shopsInfo.concat(res.data) })
+      } else {
+        this.setData({ moreFlag: false})
+        wx.showToast({
+          title: '没有数据了',
+          icon: 'none',
+          duration: 1500
+        })
+      }
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({ id: options.id || 1 })
-    console.log(this.data.id)
-    switch (parseInt(this.data.id)) {
-      case 1:
-        wx.setNavigationBarTitle({ title: '美食' })
-        break;
-      case 2:
-        wx.setNavigationBarTitle({ title: '洗浴足疗' })
-        break;
-      case 3:
-        wx.setNavigationBarTitle({ title: '结婚啦' })
-        break;
-      case 4:
-        wx.setNavigationBarTitle({ title: '卡拉OK' })
-        break;
-    }
-    
+    options.id && this.setData({ id: options.id })
+    options.title && wx.setNavigationBarTitle({ title: options.title })
     this.getShopsInfo()
   },
 
@@ -55,7 +56,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
@@ -76,14 +77,20 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      page: 0,
+      shopsInfo: [],
+      moreFlag: true
+    })
+    this.getShopsInfo()
+    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getShopsInfo()
+    this.data.moreFlag && this.getShopsInfo()
   },
 
   /**

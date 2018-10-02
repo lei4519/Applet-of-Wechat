@@ -25,6 +25,7 @@ page{
 .shop-title{
   font-size: 16px;
   color: #333;
+  width: 372rpx;
 }
 .shop-star{
   position: absolute;
